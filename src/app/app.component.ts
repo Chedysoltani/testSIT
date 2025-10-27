@@ -10,8 +10,7 @@ import { AlertController } from '@ionic/angular';
 export class AppComponent {
   constructor(private alertCtrl: AlertController) {}
 
-  onStart() {
-    alert("Bonjour !");  // Très simple, fonctionne même dans QR preview
-    console.log("Bouton cliqué"); // Utile si tu testes via Chrome Remote Debug
+  showLogin = false;
+  showSignup = false;
   }
-}
+

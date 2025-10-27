@@ -1,5 +1,52 @@
-<ion-content class="ion-padding" style="text-align:center;">
-  <img src="assets/sit.jpg" alt="Logo SIT" style="width:200px; margin-top:50px;">
-  <h1 style="color:#E30613; margin-top:10px;">SIT E-Learning</h1>
-  <ion-button color="secondary" style="margin-top:20px;" (click)="onStart()">Commencer</ion-button>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      SIT <span class="brand">E-Learning</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    <img src="assets/sit.jpg" alt="SIT Logo" class="logo"/>
+    <h2>Bienvenue sur <span class="brand">SIT E-Learning</span></h2>
+    <p>Apprenez n'importe où, n'importe quand.</p>
+
+    <div class="button-group">
+      <ion-button expand="block" color="secondary" (click)="showLogin = true; showSignup = false;">Connexion</ion-button>
+      <ion-button expand="block" color="primary" (click)="showSignup = true; showLogin = false;">Inscription</ion-button>
+    </div>
+
+    <!-- Login Form -->
+    <div *ngIf="showLogin" class="form-container">
+      <h3>Connexion</h3>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="secondary" class="mt-2">Se connecter</ion-button>
+    </div>
+
+    <!-- Signup Form -->
+    <div *ngIf="showSignup" class="form-container">
+      <h3>Inscription</h3>
+      <ion-item>
+        <ion-label position="floating">Nom complet</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="primary" class="mt-2">S'inscrire</ion-button>
+    </div>
+  </div>
 </ion-content>
